@@ -8,13 +8,18 @@ import ExploreScreen from './screens/ExploreScreen';
 
 const Tab = createBottomTabNavigator()
 
-
-
+const screenOptions = {
+  headerShown: false,
+  tabBarShowLabel: false
+}
 
 export default function App() {
   return (
     <NavigationContainer>
-   <Tab.Navigator initialRouteName='home'>
+   <Tab.Navigator 
+   initialRouteName='Home'
+   screenOptions={screenOptions}
+   >
     <Tab.Screen 
     name='Home' 
     component={HomeScreen}
@@ -22,7 +27,8 @@ export default function App() {
       tabBarIcon: ({focused }) =>{
         return(
           <View>
-            
+           <Icon path={mdiHomeVariantOutline} size={1} />
+
           </View>
         )
 
